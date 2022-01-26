@@ -5,9 +5,12 @@
 
   <employees-list employees-list="homePageVm.employees"></employees-list>
 
-  <div class="c-dashboard__footer">
-    <button class="c-button">
-      Load More
+  <div class="c-dashboard__footer" ng-if="homePageVm.totalPages != homePageVm.currentPage">
+    <button ng-disabled="homePageVm.clicked" class="c-button" ng-click="homePageVm.loader()">
+      <div class="c-spinner">
+          <span ng-show="homePageVm.clicked" class="c-smooth spinner" > </span>
+          <label class="c-label" > Load More</label>
+      </div>
     </button>
   </div>
 </div>
