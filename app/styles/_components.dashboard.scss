@@ -30,10 +30,39 @@
 }
 
 .c-filters__container {
-  margin: 0 0 8px;
+  margin: 0 0 2rem;
   padding: 16px 8px;
   border: 1px solid #dcdee3;
   background-color: #e5e9f1;
+  .c-filters_form {
+    display: flex;
+    justify-content: center;
+    .c-filters_group{
+      margin:  0 15px;
+      label {
+        padding-right: 5px;
+        color: #00000096;
+      }
+      input{
+        border: 0;
+        padding: 6px;
+        border-radius: 3px;
+      }
+    }
+    .c-filter-btn{
+      padding: 10px;
+      background: #00f;
+      color: #fff;
+      border-radius: 4px;
+  
+    }
+  }
+  .c-filter-error{
+    text-align: center;
+    color: #f00;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
 }
 
 .c-chart__container {
@@ -48,4 +77,33 @@
   min-width: 120px;
   padding: 0 16px;
   border-radius: 4px;
+  .c-spinner {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .spinner::after {
+    content: '';
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .spinner.c-smooth::after {
+    border-top: 4px solid rgba(255, 255, 255, 1.0);
+    border-left: 4px solid rgba(255, 255, 255, 1.0);
+    border-right: 4px solid rgba(255, 255, 255, 0.0);
+    animation: spinner .6s linear infinite;
+  }
+  .c-label{padding: 0px 26px;cursor: pointer;}
+  
+  @keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+  
 }
