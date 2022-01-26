@@ -1,6 +1,5 @@
 <template>
-  <div class="c-chart__container">
-   
+  <div class="c-chart__container"> 
     <v-chart ref="chart" :option="chartOptions" />
   </div>
 </template>
@@ -34,7 +33,6 @@ use([
 
 export default {
   name: "PerformanceChartComponent",
-
   components: {
     VChart,
   },
@@ -42,6 +40,7 @@ export default {
   data() {
     return {
       store: store,
+      date: store.state.date
     };
   },
 
@@ -52,7 +51,7 @@ export default {
     initOptions() {
       return {
         width: "auto",
-        height: "300px",
+        height: "500px",
       };
     },
 
@@ -137,8 +136,10 @@ export default {
     yAxisData() {
     return  this.performances.map((item) => +item.performance * 100);
     },
+  },
 
-
+  created() {
+    store.dispatch("getPerformances");
   },
 
   methods: {
@@ -146,8 +147,6 @@ export default {
       return moment(dateInMs).format("DD MMM YYYY");
     },
   },
-  created() {
-    store.dispatch("getPerformances");
-  },
+
 };
 </script>
