@@ -2,6 +2,7 @@ import Vue from 'vue';
 import 'ngVue';
 import 'ngVue/build/plugins.js';
 import PerformancePageComponent from './pages/performance-page.vue';
+import PageNotFound from './pages/page-not-found.vue';
 import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
 // import store from './store';
 
@@ -17,4 +18,8 @@ angular.module('appModule').directive('vPerformancePage', (createVueComponent) =
 
 angular.module('appModule').directive('vPerformanceChart', (createVueComponent) => {
   return createVueComponent(Vue.component('performanceChartComponent', PerformanceChartComponent));
+});
+
+angular.module('appModule').directive('vPageNotFound', (createVueComponent) => {
+  return createVueComponent(Vue.component('PageNotFound', PageNotFound));
 });
