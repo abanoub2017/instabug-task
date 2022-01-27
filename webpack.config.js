@@ -23,8 +23,13 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   devServer: {
-    static: './dist',
-    hot: true,
+    index: 'index.html',
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    hot: true, //Hot module replacement
+    port: 9000,
+    writeToDisk:true,
+    open: 'chrome' //open in chrome
   },
   output: {
     filename: '[name].bundle.js',
