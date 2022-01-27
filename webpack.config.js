@@ -23,13 +23,9 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   devServer: {
-    index: 'index.html',
-    contentBase: path.join(__dirname, 'dist'),
+    static: './dist',
+    hot: true,
     compress: true,
-    hot: true, //Hot module replacement
-    port: 9000,
-    writeToDisk:true,
-    open: 'chrome' //open in chrome
   },
   output: {
     filename: '[name].bundle.js',
@@ -107,4 +103,9 @@ module.exports = {
       // },
     ],
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+    }
+  }
 };

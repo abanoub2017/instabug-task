@@ -22,7 +22,7 @@
 import moment from "moment";
 import store from '../../store';
 export default {
-  name: "FilterComponent",
+  name: "PerformanceFilterComponent",
   data() {
     return {
       error:false,
