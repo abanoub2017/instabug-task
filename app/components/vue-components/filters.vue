@@ -7,14 +7,13 @@
           type="text"
           v-model="filter"
           name="search"
-          placeholder="name"
-          required
+          placeholder="Employee name"
         />
       </div>
 
-      <button class="c-filter-btn" type="submit">Search</button>
+      <button class="c-filter-btn primary" type="submit">Search</button>
+      <button class="c-filter-btn light" @click="clear" type="click">Clear</button>
     </form>
-      <button class="c-filter-btn" @click="clear" type="submit">Clear</button>
   </div>
 </template>
 

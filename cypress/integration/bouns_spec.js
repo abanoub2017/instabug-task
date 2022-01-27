@@ -38,7 +38,7 @@ describe('First Scenario', () => {
     })
   
     it('Check the loader in clicked', () => {
-          cy.get('button').click()    
+          cy.get('.c-button').click()    
     })
 
     it('Check Params', () => {

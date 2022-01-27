@@ -51,10 +51,15 @@
     }
     .c-filter-btn{
       padding: 10px;
-      background: #00f;
       color: #fff;
       border-radius: 4px;
-  
+      margin:0 5px;
+      &.primary{
+        background: #00f;
+      }
+      &.light{
+        background: #0099ff;
+      }
     }
   }
   .c-filter-error{
