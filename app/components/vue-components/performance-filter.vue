@@ -10,7 +10,7 @@
           <label for="to">To:</label>
           <input type="date" v-model="date.dateTo" name="to" required>
        </div>
-        <button class="c-filter-btn" type="submit">Search</button>
+        <button class="c-filter-btn primary" type="submit">Search</button>
     </form>
     <template v-if="error">
             <p  class="c-filter-error">{{errorMessage}}</p>
